@@ -1,5 +1,5 @@
 import { useState, useRef, ComponentPropsWithRef } from "react";
-import { Mesh } from 'three'
+import { Mesh, DoubleSide } from 'three'
 import { Canvas, useFrame, Vector3 } from "@react-three/fiber";
 import { Box, PresentationControls, GizmoViewport, GizmoHelper, Grid } from "@react-three/drei";
 
@@ -47,13 +47,13 @@ const Layer = ({
   <Box
     args={[5, 0.1, 5]}
     position={[0, (layer * 5) + 1, 0]}
-    
+
     {...rest}
   >
     <meshNormalMaterial
       transparent={true}
-      opacity={active ? 1 : 0.5}
-      side={"bothsides"}
+      opacity={active ? 1 : 0.4}
+      side={DoubleSide}
 
     />
 
